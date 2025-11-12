@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-COMMERCE WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="contactsection.html">
+
+    
+</head>
+<body>
+
+    
+<!-- //--NAV BAR START--// -->
+
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Coffee Corner</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menusection.html">Menu</a></li>
+        <li><a href="cartsection.html">Cart<span id="cart-count">0</span></a></li>
+        <li><a href="contactsection.html">Contact</a></li>
+        <li><a href="reviewssection.html">Reviews</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <input type="text" id="search" placeholder="Search..." class="search-bar">
+        <button id="loginBtn" class="btn">Login</button>
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- 🔸 Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Login to Coffee Corner</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="loginUser()" class="btn">Login</button>
+      <p>Don’t have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- 🔸 Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSignup()">&times;</span>
+      <h2>Create Account</h2>
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button class="btn">Sign Up</button>
+    </div>
+  </div>
+
+
+<!--NAV BAR END-->
+
+<!--HOME PAGE START-->
+
+<!-- 🔸 Hero / About Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Welcome to <span>Coffee Corner</span></h1>
+    <p>We serve the finest coffee crafted with passion and precision.  
+    Every sip tells our story — bold, smooth, and unforgettable.</p>
+    <a href="menusection.html" class="btn">Explore Menu</a>
+  </div>
+</section>
+
+
+<!-- 🔸 Dynamic Best Coffee Section -->
+<section class="best-coffee">
+  <h2>Our Best Coffees</h2>
+  <div id="coffee-container" class="coffee-container">
+    <!-- JavaScript will inject cards dynamically -->
+  </div>
+</section>
+
+
+<!-- 🔸 About Coffee Section -->
+<section class="about-coffee">
+  <div class="about-content">
+    <h2>About Our Coffee</h2>
+    <p>
+      At <b>Coffee Corner</b>, we believe in brewing happiness.  
+      Our beans are sourced from the best organic farms and roasted to perfection.  
+      Whether you love creamy cappuccinos or bold espressos — we’ve got your cup ready!
+    </p>
+  </div>
+</section>
+
+
+<!-- 🔸 Customer Reviews Section -->
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <div id="review-container" class="review-container">
+    <!-- Reviews will be added dynamically by JS -->
+  </div>
+  <div class="review-btn">
+    <a href="reviewssection.html" class="btn">View More Reviews</a>
+  </div>
+</section>
+
+
+
+<!-- 🔸 ABOUT & CONTACT OVERVIEW (HOME PAGE) -->
+<section class="about-contact">
+  <div class="about-part">
+    <h2>About Our Website</h2>
+    <p>
+      Coffee Corner brings you freshly brewed passion in every cup.  
+      Experience our story, our beans, and our mission to make your coffee moments unforgettable.
+    </p>
+    
+  </div>
+
+  <div class="contact-part">
+    <h2>Contact Us</h2>
+    <p>
+      Have any questions or feedback? We’d love to hear from you.  
+      Click below to reach our team.
+    </p>
+    <a href="contactsection.html" class="btn">Reach Out</a>
+  </div>
+</section>
+
+<!--HOME PAGE END-->
+
+
+    <script src="main.js"></script>
+</body>
+</html>

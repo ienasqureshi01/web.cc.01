@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.html">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Coffee Corner</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menusection.html">Menu</a></li>
+        <li><a href="cartsection.html">Cart 🛒 <span id="cart-count">0</span></a></li>
+        <li><a href="contactsection.html">Contact</a></li>
+        <li><a href="reviewssection.html">Reviews</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <input type="text" id="search" placeholder="Search..." class="search-bar">
+        <button id="loginBtn" class="btn">Login</button>
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+
+<!-- 🔸 CONTACT PAGE -->
+<div class="contact-page">
+  <h1>Contact Coffee Corner</h1>
+  <p>We’d love to hear from you! Fill out the form below or reach us directly.</p>
+
+  <form id="contact-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <a href="index.html" class="btn back-home">Back to Home</a>
+</div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Coffee Corner</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---------- GENERAL BODY ---------- */
+    body {
+      background-color: #0b0b0b;
+      color: #f8f8f2;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ---------- NAVBAR STYLING ---------- */
+    header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: linear-gradient(90deg, #000000 0%, #1a1a1a 100%);
+      border-bottom: 1px solid #d4af37;
+      box-shadow: 0 0 15px rgba(212,175,55,0.15);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 60px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 26px;
+      font-weight: 700;
+      text-decoration: none;
+      text-shadow: 0 0 6px rgba(212,175,55,0.3);
+      transition: 0.3s;
+    }
+
+    .logo:hover {
+      color: #04c46b;
+      text-shadow: 0 0 10px rgba(4,196,107,0.5);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f8f8f2;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #d4af37;
+      text-shadow: 0 0 6px rgba(212,175,55,0.4);
+    }
+
+    #cart-count {
+      background: #04c46b;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-left: 3px;
+    }
+
+    /* ---------- CART SECTION ---------- */
+    h2 {
+      text-align: center;
+      color: #d4af37;
+      margin-top: 40px;
+      font-size: 32px;
+      text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+    }
+
+    .cart-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #1a1a1a;
+      border: 1px solid #d4af37;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(212,175,55,0.2);
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 18px;
+      box-shadow: 0 0 10px rgba(212,175,55,0.1);
+    }
+
+    .cart-item img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #d4af37;
+      margin-right: 15px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      margin-right: 15px;
+    }
+
+    .cart-item-info h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #d4af37;
+    }
+
+    .cart-item-info p {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 6px;
+    }
+
+    .cart-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qty-btn {
+      background: #d4af37;
+      border: none;
+      color: #000;
+      font-size: 18px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .qty-btn:hover {
+      background: #04c46b;
+      color: #fff;
+    }
+
+    .remove-btn {
+      background: crimson;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #ff4b4b;
+    }
+
+    /* ---------- ORDER SUMMARY ---------- */
+    .order-summary {
+      text-align: center;
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 12px;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(212,175,55,0.2);
+    }
+
+    .order-summary p {
+      margin: 6px 0;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .order-summary h3 {
+      color: #d4af37;
+      font-size: 22px;
+      text-shadow: 0 0 5px rgba(212,175,55,0.3);
+      margin-top: 10px;
+    }
+
+    .empty-msg {
+      text-align: center;
+      color: gray;
+      font-style: italic;
+      margin-top: 40px;
+    }
+
+
+    /* BUTTON STYLING */
+  
+  .checkout-btn {
+  background: #d4af37;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.checkout-btn:hover {
+  background: #04c46b;
+  color: #fff;
+  transform: scale(1.03);
+}
+  
+  </style>
+</head>
+
+<body>
+  <!-- 🔸 NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"> Coffee Corner</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menusection.html">Menu</a></li>
+        <li><a href="cartsection.html">Cart 🛒<span id="cart-count">0</span></a></li>
+        <li><a href="contactsection.html">Contact</a></li>
+        <li><a href="reviewssection.html">Reviews</a></li>
+        <li><a href="aboutsection.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔸 CART CONTENT -->
+  <h2>🛍️ Your Order Summary</h2>
+  <div id="cart-list" class="cart-container"></div>
+
+  <div class="order-summary" id="order-summary">
+    <p>Subtotal: <span id="subtotal">PKR 0</span></p>
+    <p>Delivery: <strong>PKR 200</strong></p>
+    <h3>Total: <span id="total">PKR 200</span></h3>
+  </div>
+
+  <!-- 🔸 JAVASCRIPT FUNCTIONALITY -->
+    <script>
+  const cartList = document.getElementById("cart-list");
+  const subtotalEl = document.getElementById("subtotal");
+  const totalEl = document.getElementById("total");
+  const orderSummary = document.getElementById("order-summary");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function renderCart() {
+    cartList.innerHTML = "";
+    let subtotal = 0;
+
+    if (cart.length === 0) {
+      cartList.innerHTML = `<p class="empty-msg">Your cart is empty</p>`;
+      orderSummary.style.display = "none";
+      return;
+    } else {
+      orderSummary.style.display = "block";
+    }
+
+    cart.forEach((item, index) => {
+      const priceNum = parseFloat(item.price) || 0;
+      const qty = parseInt(item.quantity) || 1;
+      const itemTotal = priceNum * qty;
+      subtotal += itemTotal;
+
+      const div = document.createElement("div");
+      div.classList.add("cart-item");
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="cart-item-info">
+          <h4>${item.name}</h4>
+          <p>PKR ${priceNum} × ${qty} = <strong>PKR ${itemTotal}</strong></p>
+        </div>
+        <div class="cart-actions">
+          <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
+          <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+      cartList.appendChild(div);
+    });
+
+    subtotalEl.textContent = `PKR ${subtotal}`;
+    totalEl.textContent = `PKR ${subtotal + 200}`;
+    document.getElementById("cart-count").textContent = cart.length;
+
+    // 🔹 Add Checkout Button if not already added
+    if (!document.getElementById("checkout-btn")) {
+      const checkoutBtn = document.createElement("button");
+      checkoutBtn.id = "checkout-btn";
+      checkoutBtn.textContent = "Proceed to Checkout";
+      checkoutBtn.classList.add("checkout-btn");
+      checkoutBtn.onclick = handleCheckout;
+      orderSummary.appendChild(checkoutBtn);
+    }
+  }
+
+  function changeQty(index, change) {
+    if (!cart[index]) return;
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function handleCheckout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty. Please add items first.");
+      return;
+    }
+
+    alert("✅ Thank you for your purchase! Your order has been placed successfully.");
+    localStorage.removeItem("cart");
+    cart = [];
+    renderCart();
+  }
+  renderCart();
+</script>
+
+</body>
+</html>

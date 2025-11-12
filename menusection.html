@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Coffee Corner</a>
+
+<ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menusection.html">Menu</a></li>
+        <li><a href="cartsection.html">Cart<span id="cart-count">0</span></a></li>
+        <li><a href="contactsection.html">Contact</a></li>
+        <li><a href="reviewssection.html">Reviews</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <input type="text" id="search" placeholder="Search..." class="search-bar">
+        <button id="loginBtn" class="btn">Login</button>
+      </div>
+
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+
+
+  <section class="menu-section">
+  <h1>Our Coffee Menu</h1>
+  <p>Discover our finest collection brewed to perfection</p>
+
+  <div id="menu-container" class="menu-container">
+    <!-- Dynamic coffee cards appear here -->
+  </div>
+</section>
+
+<!-- 🔹 COFFEE DEALS -->
+<section class="deals-section">
+  <h2>Special Coffee Deals</h2>
+  <div class="deals-container" id="deals-container">
+    <!-- Dynamic deal cards appear here -->
+  </div>
+</section>
+
+<script src="main.js"></script>    
+</body>
+</html>
+
