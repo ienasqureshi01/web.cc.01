@@ -1,11 +1,11 @@
 /* <!--NAV BAR START--> */
 
-// 📱 Responsive menu
+// Responsive menu
 function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('active');
 }
 
-// 🔐 Login modal
+// Login modal
 document.getElementById('loginBtn').addEventListener('click', () => {
   document.getElementById('loginModal').style.display = 'flex';
 });
@@ -31,14 +31,14 @@ function closeSignup() {
   document.getElementById('signupModal').style.display = 'none';
 }
 
-// 🛒 Cart Counter Demo
+//  Cart Counter Demo
 let cartCount = 0;
 function addToCart() {
   cartCount++;
   document.getElementById('cart-count').textContent = cartCount;
 }
 
-// 🔍 Search effect (demo)
+//  Search effect (demo)
 document.getElementById('search').addEventListener('keyup', function() {
   let query = this.value.toLowerCase();
   console.log("Searching:", query);
@@ -50,7 +50,7 @@ document.getElementById('search').addEventListener('keyup', function() {
 
 /* <!--HOME PAGE START--> */
 
-// ✅ Home Page Dynamic Coffee Cards with Full Cart Functionality
+//  Home Page Dynamic Coffee Cards with Full Cart Functionality
 
 const coffees = [
   {
@@ -73,11 +73,11 @@ const coffees = [
   }
 ];
 
-// ✅ Initialize Cart
+// Initialize Cart
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartCount();
 
-// ✅ Render Coffee Cards
+// Render Coffee Cards
 const container = document.getElementById('coffee-container');
 if (container) {
   coffees.forEach((coffee, i) => {
@@ -98,7 +98,7 @@ if (container) {
   });
 }
 
-// ✅ Add to Cart Function (same as Menu)
+// Add to Cart Function (same as Menu)
 function addToCart(name, price, img) {
   const existingItem = cart.find(item => item.name === name);
   
@@ -111,11 +111,11 @@ function addToCart(name, price, img) {
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
 
-  // 🔸 Optional custom alert (replace with your popup if needed)
+  //  Optional custom alert (replace with your popup if needed)
   alert(`${name} added to your cart!`);
 }
 
-// ✅ Update Cart Count in Navbar
+// Update Cart Count in Navbar
 function updateCartCount() {
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
   const el = document.getElementById('cart-count');
@@ -124,7 +124,7 @@ function updateCartCount() {
 
 
 
-// ✅ Dynamic Reviews Section
+// Dynamic Reviews Section
 const reviews = [
   {
     name: "Sarah Khan",
@@ -146,7 +146,7 @@ const reviews = [
   }
 ];
 
-// ✅ Render Reviews
+//  Render Reviews
 const reviewContainer = document.getElementById("review-container");
 if (reviewContainer) {
   reviews.forEach(r => {
@@ -245,7 +245,7 @@ if (dealsContainer) {
 function addToCart(name, price, img) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // ✅ Check if item already exists
+  //  Check if item already exists
   let existing = cart.find(item => item.name === name);
   if (existing) {
     existing.quantity += 1;
@@ -253,19 +253,20 @@ function addToCart(name, price, img) {
     cart.push({ name, price, img, quantity: 1 });
   }
 
-  // ✅ Save updated cart
+  // Save updated cart
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // ✅ Update cart count properly
+  // Update cart count properly
   const cartCount = document.getElementById("cart-count");
   if (cartCount) {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
   }
 
-  // ✅ Custom Alert (Optional)
+  //  Custom Alert (Optional)
   alert(`${name} added to your cart!`);
 }
+
 
 
 
