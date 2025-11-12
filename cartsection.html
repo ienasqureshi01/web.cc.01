@@ -233,7 +233,7 @@
 </head>
 
 <body>
-  <!-- 🔸 NAVBAR -->
+  <!--  NAVBAR -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"> Coffee Corner</a>
@@ -248,7 +248,7 @@
     </nav>
   </header>
 
-  <!-- 🔸 CART CONTENT -->
+  <!-- CART CONTENT -->
   <h2>🛍️ Your Order Summary</h2>
   <div id="cart-list" class="cart-container"></div>
 
@@ -258,7 +258,7 @@
     <h3>Total: <span id="total">PKR 200</span></h3>
   </div>
 
-  <!-- 🔸 JAVASCRIPT FUNCTIONALITY -->
+  <!-- JAVASCRIPT FUNCTIONALITY -->
     <script>
   const cartList = document.getElementById("cart-list");
   const subtotalEl = document.getElementById("subtotal");
@@ -306,7 +306,7 @@
     totalEl.textContent = `PKR ${subtotal + 200}`;
     document.getElementById("cart-count").textContent = cart.length;
 
-    // 🔹 Add Checkout Button if not already added
+    //  Add Checkout Button if not already added
     if (!document.getElementById("checkout-btn")) {
       const checkoutBtn = document.createElement("button");
       checkoutBtn.id = "checkout-btn";
@@ -347,3 +347,4 @@
 
 </body>
 </html>
+
