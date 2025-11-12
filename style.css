@@ -47,7 +47,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 22px; /* reduced from 35px → tighter layout */
+  gap: 22px; 
 }
 
 .nav-links a {
@@ -236,7 +236,7 @@ a:hover {
 /* <!--NAV BAR END--> */
 
 
-/* <!--HOME PAGE START (PREMIUM THEME)--> */
+/* <!--HOME PAGE START--> */
 
 .hero {
   background: url('backimg.jpg') center/cover no-repeat;
@@ -438,7 +438,7 @@ h1, h2, h3 {
   transition: 0.3s;
   color: #000;
   font-weight: 800;
-  margin-left: 25px; /* more spacing between price and button */
+  margin-left: 25px; 
 }
 
 .add-btn:hover {
@@ -448,7 +448,7 @@ h1, h2, h3 {
 }
 
 
-/* ---------- REVIEWS SECTION (Single Row Layout) ---------- */
+/* ---------- REVIEWS SECTION  ---------- */
 .review-container {
   display: flex;
   justify-content: space-between;  /* left, center, right alignment */
@@ -595,7 +595,7 @@ h1, h2, h3 {
   color: #fff;
 }
 
-/* ---------- CONTACT PAGE (Updated Theme) ---------- */
+/* ---------- CONTACT PAGE---------- */
 .contact-page {
   background: linear-gradient(180deg, #000 0%, #0b0b0b 100%);
   color: #f8f8f2;
@@ -707,7 +707,7 @@ h1, h2, h3 {
   box-shadow: 0 0 15px rgba(4, 196, 107, 0.5);
 }
 
-/* ---------- MENU ITEMS (SAME AS BEST COFFEE) ---------- */
+/* ---------- MENU ITEMS ---------- */
 .menu-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -791,7 +791,7 @@ h1, h2, h3 {
 }
 
 
-/* ---------- Price + Add Button (Exactly like Best Coffee) ---------- */
+/* ---------- Price + Add Button---------- */
 .price-add {
   display: flex;
   justify-content: space-between;
@@ -1127,7 +1127,8 @@ h1, h2, h3 {
   }
 }
 
-/* //CART SECTION// */
+
+
 
 
 
